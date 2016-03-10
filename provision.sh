@@ -13,6 +13,9 @@ apt-get install -y curl
 
 apt-get install -y python-software-properties
 add-apt-repository -y ppa:fkrull/deadsnakes
+sudo apt-get update -y
+
+
 apt-get install -y python3.4
 apt-get install -y python3-pip
 apt-get install -y python3.4-dev
@@ -23,8 +26,9 @@ apt-get install -y python3.5-venv
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --ruby
+source /etc/profile.d/rvm.sh
 rvm install 2.2
 
 # TODO change for symbolic links so that they can be edited from the host machine
-cp ~/scripts/.bashrc ~/.bashrc
-cp ~/scripts/cortoproject-rakefile ~/cortoproject/rakefile
+cp /home/vagrant/scripts/.bashrc /home/vagrant/.bashrc
+cp /home/vagrant/scripts/cortoproject-rakefile /home/vagrant/cortoproject/rakefile
