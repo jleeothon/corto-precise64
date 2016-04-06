@@ -7,6 +7,26 @@ COMPONENTS = %w(
   cortodoc
   test
   json
+  web
+  postgresql
+  corto-jinja
 )
 
-require "#{ENV['CORTO_BUILD']}/forward"
+task :versions do
+  Dir.foreach(".") do |project|
+    next if project == '.' or project == '..'
+    begin
+      Dir.chdir project
+        if File.exist? ".git"
+          sha = `git rev-parse HEAD`
+          puts "cortoproject/#{project}@#{sha}"
+        end
+      Dir.chdir ".."
+    rescue
+    end
+  end
+end
+
+task :default do
+  require "#{ENV['CORTO_BUILD']}/forward"
+end
