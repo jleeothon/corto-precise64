@@ -1,9 +1,8 @@
-# corto-precise64
-Vagrant configuration for developing Corto on Ubuntu Precise 64
+# cortobox
+
+Vagrant configuration for developing Corto on Ubuntu Trusty 64
 
 # After bringing the box up
-
-After running `vagrant up`, I recommend running `scripts/git-clone.sh` from the host machine. Still need to find out why it cannot be cloned from the guest machine.
 
 Build the core Corto packages by running `cd /home/vagrant/cortoproject && rake`.
 

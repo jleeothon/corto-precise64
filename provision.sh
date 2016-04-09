@@ -11,11 +11,10 @@ apt-get install -y libxml2-dev
 apt-get install -y valgrind
 apt-get install -y curl
 
+# For python-binding
 apt-get install -y python-software-properties
 add-apt-repository -y ppa:fkrull/deadsnakes
 sudo apt-get update -y
-
-
 apt-get install -y python3.4
 apt-get install -y python3-pip
 apt-get install -y python3.4-dev
@@ -23,6 +22,9 @@ apt-get install -y python3.4-venv
 apt-get install -y python3.5
 apt-get install -y python3.5-dev
 apt-get install -y python3.5-venv
+
+# For web
+apt-get install -y libcurl4-openssl-dev
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --ruby
