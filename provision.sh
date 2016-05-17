@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND=noninteractive
+
 apt-get update -y
 
 apt-get install -y bison
@@ -31,15 +32,14 @@ cp /home/vagrant/scripts/postgresql.list /etc/apt/sources.list.d/postgresql.list
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 apt-get update -y
 apt-get install -y postgresql-9.5
+apt-get install -y postgres-xc-client
+apt-get install -y postgres-xc
+apt-get install -y libpq-dev
 
-if [ ! -e "/usr/local/rvm/bin/rvm" ]
-then
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-    curl -sSL https://get.rvm.io | bash -s stable --ruby
-    source /etc/profile.d/rvm.sh
-    rvm install 2.2
-fi
-
+# Ruby
+apt-add-repository -y ppa:brightbox/ruby-ng
+apt-get update -y
+apt-get install -y ruby2.2
 
 # TODO change for symbolic links so that they can be edited from the host machine
 cp /home/vagrant/scripts/.bashrc /home/vagrant/.bashrc
