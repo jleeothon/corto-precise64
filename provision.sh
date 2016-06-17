@@ -4,13 +4,17 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update -y
 
+apt-get install -y git
+
 apt-get install -y bison
 apt-get install -y flex
-apt-get install -y git
-apt-get install -y gdb
 apt-get install -y libxml2-dev
-apt-get install -y valgrind
 apt-get install -y curl
+apt-get install -y libffi6
+apt-get install -y libffi-dev
+
+apt-get install -y gdb
+apt-get install -y valgrind
 
 # For python-binding
 apt-get install -y python-software-properties
