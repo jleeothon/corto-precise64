@@ -44,7 +44,13 @@ apt-get install -y libpq-dev
 apt-add-repository -y ppa:brightbox/ruby-ng
 apt-get update -y
 apt-get install -y ruby2.2
+apt-get install -y ruby2.2-dev
+gem install travis -v 1.8.2 --no-rdoc --no-ri
 
 # TODO change for symbolic links so that they can be edited from the host machine
 cp /home/vagrant/scripts/.bashrc /home/vagrant/.bashrc
 cp /home/vagrant/scripts/rakefile /home/vagrant/cortoproject/rakefile
+
+
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
