@@ -6,15 +6,17 @@ apt-get update -y
 
 RUN \
 DEBIAN_FRONTEND=noninteractive \
-apt-get install -y \
-git \
+apt-get install -y --no-install-recommends \
 bison \
-flex \
-libxml2-dev \
+ca-certificates \
 curl \
-libffi6 \
-libffi-dev \
+flex \
 gdb \
+git \
+libffi-dev \
+libffi6 \
+libxml2-dev \
+sudo \
 valgrind \
 && \
 git config --global user.useConfigOnly true
@@ -25,9 +27,9 @@ apt-get install -y \
 zsh
 
 RUN \
-adduser --system --disabled-password corto \
+useradd --home-dir /home/corto --create-home -G sudo corto \
 && \
-adduser corto sudo
+echo 'corto ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 
 USER corto
 WORKDIR /home/corto

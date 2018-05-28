@@ -6,3 +6,4 @@ services:
     volumes:
       - ./cortoproject:/home/corto/cortoproject
       - ./.zshrc:/home/corto/.zshrc
+    working_dir: /home/corto/cortoproject
