@@ -1,2 +1,2 @@
-.vagrant
-packer_cache
+/cortoproject
+!/cortoproject/.git-keep

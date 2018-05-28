@@ -1,0 +1,8 @@
+version: '2.2'
+services:
+  corto:
+    build: .
+    entrypoint: zsh -i -s
+    volumes:
+      - ./cortoproject:/home/corto/cortoproject
+      - ./.zshrc:/home/corto/.zshrc
