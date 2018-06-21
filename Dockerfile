@@ -17,14 +17,15 @@ libffi-dev \
 libffi6 \
 libxml2-dev \
 sudo \
-valgrind \
-&& \
-git config --global user.useConfigOnly true
+valgrind
 
 RUN \
 DEBIAN_FRONTEND=noninteractive \
-apt-get install -y \
-zsh
+apt-get install -y --no-install-recommends \
+vim \
+zsh \
+&& \
+git config --global user.useConfigOnly true
 
 RUN \
 useradd --home-dir /home/corto --create-home -G sudo corto \

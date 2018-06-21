@@ -4,6 +4,4 @@ services:
     build: .
     entrypoint: zsh -i -s
     volumes:
-      - ./cortoproject:/home/corto/cortoproject
-      - ./.zshrc:/home/corto/.zshrc
-    working_dir: /home/corto/cortoproject
+      - ./home-corto:/home/corto
